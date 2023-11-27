@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  server-image:
+    image: server-image:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db-image
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-image:5432/messages_bd
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=12345
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_SHOW_SQL=true
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
+      - SERVER_SERVLET_ENCODING_CHARSET=UTF-8
+      - SERVER_SERVLET_ENCODING_ENABLED=true
+      - SERVER_SERVLET_ENCODING_FORCE=true
+    networks:
+        - my-network
+
+  db-image:
+    image: db-image:latest
+    environment:
+      POSTGRES_DB: messages_bd
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    networks:
+        - my-network
+
+networks:
+    my-network:
