@@ -19,6 +19,7 @@ The project is organized into two main folders:
 
 Each folder has its own `build_and_run.sh` script for convenience.
 
+### Make sure you have the Docker engine running
 ## Running the Server
 
    ```bash
