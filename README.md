@@ -6,7 +6,7 @@ Before running this project, ensure that you have the following tools installed 
 
 - **Maven:** Maven is used for building the project. You can download it from [https://maven.apache.org/](https://maven.apache.org/).
 
-- **Docker:** Docker is used for containerization. You can download it from [https://www.docker.com/](https://www.docker.com/).
+- **Docker:** Docker is used for containerization of (only) the server and database. You can download it from [https://www.docker.com/](https://www.docker.com/).
 
 - **JDK (Java Development Kit):** Make sure you have a JDK installed.
 
